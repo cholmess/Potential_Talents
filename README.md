@@ -1,74 +1,27 @@
-# Data analysis
-- Document here the project: uDjU5kPnJhvOT7XM
-- Description: Project Description
-- Data Source:
-- Type of analysis:
+Summary of the project
 
-Please document the project the better you can.
+A talent sourcing and management company is interested in finding talented individuals for sourcing these candidates to technology companies. The nature of the job requires a lot of human labor and is full of manual operations. Towards automating this process they want to build a better approach that could save them time and finally help spot potential candidates that could fit the roles which are in search for.
+    
+    The objective is to create a robust and automated ML model that is able to list and rank potential candidates based on a fit score.
+    
+    The data* comes from their sourcing efforts. There are removed fields that could directly reveal personal details and gave a unique identifier for each candidate.
+    
+    
+* Data has been deleted from the repository because of privacy reasons
 
-# Startup the project
+Files used in the repository 
 
-The initial setup.
+jupyter notebook: analysis can be seen in the notebooks folder 
+original data: has been deleted because of privacy reasons
 
-Create virtualenv and install the project:
-```bash
-sudo apt-get install virtualenv python-pip python-dev
-deactivate; virtualenv ~/venv ; source ~/venv/bin/activate ;\
-    pip install pip -U; pip install -r requirements.txt
-```
+Conclusion 
 
-Unittest test:
-```bash
-make clean install test
-```
+- For ranking candidates, we process 5 text similarities: euclidian, cosine, fuzzy, jaccard and levensthein. To get the fit column score, we make a mean of the mentioned metrics to get the final values. Each time a ranking is starred, the fit score increases marginally. For these cases, there are a lot of candidates with similar job titles and locations. It would be interesting to refit if there are unique values in the dataset, but it also  seems unrealistic that could happen.
+    
+    - A larger pool of candidates could also provide more insight on the variance of fit score. 
+    
+    - Bias can be decreased by adding more feature and increasing the size of the dataset.
 
-Check for uDjU5kPnJhvOT7XM in gitlab.com/{group}.
-If your project is not set please add it:
+Acknowledgement/References 
 
-- Create a new project on `gitlab.com/{group}/uDjU5kPnJhvOT7XM`
-- Then populate it:
-
-```bash
-##   e.g. if group is "{group}" and project_name is "uDjU5kPnJhvOT7XM"
-git remote add origin git@github.com:{group}/uDjU5kPnJhvOT7XM.git
-git push -u origin master
-git push -u origin --tags
-```
-
-Functionnal test with a script:
-
-```bash
-cd
-mkdir tmp
-cd tmp
-uDjU5kPnJhvOT7XM-run
-```
-
-# Install
-
-Go to `https://github.com/{group}/uDjU5kPnJhvOT7XM` to see the project, manage issues,
-setup you ssh public key, ...
-
-Create a python3 virtualenv and activate it:
-
-```bash
-sudo apt-get install virtualenv python-pip python-dev
-deactivate; virtualenv -ppython3 ~/venv ; source ~/venv/bin/activate
-```
-
-Clone the project and install it:
-
-```bash
-git clone git@github.com:{group}/uDjU5kPnJhvOT7XM.git
-cd uDjU5kPnJhvOT7XM
-pip install -r requirements.txt
-make clean install test                # install and test
-```
-Functionnal test with a script:
-
-```bash
-cd
-mkdir tmp
-cd tmp
-uDjU5kPnJhvOT7XM-run
-```
+Thanks to Apziva for providing the data
